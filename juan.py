@@ -9,6 +9,7 @@
 
 import os
 import discord
+import config
 # from dotenv import load_dotenv
 
 # load_dotenv()
