@@ -31,12 +31,11 @@ async def on_message(message):
     if message.author.id == client.user.id:
         return
     #message starts with hi or hello then print these
-    message = message.lower()
-    if message.content.startswith('hi') or message.content.startswith('hello'):
+    if message.content.startswith('hi').lower() or message.content.startswith('hello').lower():
         msg = 'Hello {0.author.mention} welcome man, cómo andás my friend?'.format(message)
         await message.channel.send(message.channel, msg)
     #when the message with help then do this
-    elif message.content.startswith('help'):
+elif message.content.startswith('help').lower():
         msg = 'Let me check with that level and come back to you, amigo!'.format(message)
         await message.channel.send(message.channel, msg)
 
