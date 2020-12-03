@@ -16,7 +16,6 @@ import config
 # TOKEN = os.getenv(config.token)
 
 client = discord.Client()
-message = message.lower()
 
 @client.event
 #when the bot started running, we may print its name, id etc
@@ -29,6 +28,7 @@ async def on_ready():
 @client.event
 #when the bot gets the message this method gets triggered
 async def on_message(message):
+    message = message.lower()
     if message.author.id == client.user.id:
         return
     #message starts with hi or hello then print these
