@@ -35,7 +35,7 @@ async def on_message(message):
         msg = 'Hello {0.author.mention} welcome man, cómo andás my friend?'.format(message)
         await message.channel.send(message.channel, msg)
     #when the message with help then do this
-elif message.lower().content.startswith('help'):
+    elif message.lower().content.startswith('help'):
         msg = 'Let me check with that level and come back to you, amigo!'.format(message)
         await message.channel.send(message.channel, msg)
 
