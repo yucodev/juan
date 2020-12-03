@@ -16,6 +16,7 @@ import config
 # TOKEN = os.getenv(config.token)
 
 client = discord.Client()
+message = message.lower()
 
 @client.event
 #when the bot started running, we may print its name, id etc
@@ -31,11 +32,11 @@ async def on_message(message):
     if message.author.id == client.user.id:
         return
     #message starts with hi or hello then print these
-    if message.content.lower().startswith('hi') or message.content.lower().startswith('hello'):
+    if message.content.startswith('hi') or message.content.startswith('hello'):
         msg = 'Hello {0.author.mention} welcome man, cómo andás my friend?'.format(message)
         await message.channel.send(message.channel, msg)
     #when the message with help then do this
-    elif message.content.lower().startswith('help'):
+    elif message.content.startswith('help'):
         msg = 'Let me check with that level and come back to you, amigo!'.format(message)
         await message.channel.send(message.channel, msg)
 
