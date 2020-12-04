@@ -34,7 +34,7 @@ async def on_message(message):
         return
     #message starts with hi or hello then print these
     # LOOKING FORWARD TO SOLVING CASE SENSITIVE PROBLEM!
-    if message.content.startswith(['hi', 'hello', 'howdy']):
+    if message.content.startswith({'hi', 'hello', 'howdy', 'hola'}):
         msg = 'Hello {0.author.mention} welcome man, cómo andás my friend?'.format(message)
         await message.channel.send(msg)
     #when the message with help then do this
