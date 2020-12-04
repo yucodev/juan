@@ -57,5 +57,8 @@ async def on_message(message):
         msg = list[random.randint(0, len(list) - 1)].format(message)
         await message.channel.send(msg)
 
+    elif message.content.lower() in ['ok?']:
+        msg = 'ok'.format.message()
+        await message.channel.send(msg)
 
 client.run(config.token)
