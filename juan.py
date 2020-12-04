@@ -49,7 +49,8 @@ async def on_message(message):
         await message.channel.send(msg)
 
     elif message.content.lower() in ['what language do you speak', 'what languages do you speak', 'que idioma hablas', 'que idiomas hablas']:
-        msg = 'English, español, a bit of french, some german... But yeah, you know, I\'m Juan, so mainly Spanglish.'
+        list = ['English, español, a bit of french, some german... But yeah, you know, I\'m Juan, so mainly Spanglish.']
+        msg = list[random.randint(0, len(list) - 1)].format(message)
         await message.channel.send(msg)
 
     elif message.content.lower() in ['who did you vote', 'who to vote', 'trump or biden']:
@@ -58,7 +59,8 @@ async def on_message(message):
         await message.channel.send(msg)
 
     elif message.content.lower() in ['ok?']:
-        msg = 'ok'.format.message()
+        list = ['ok']
+        msg = list[random.randint(0, len(list) - 1)].format(message)
         await message.channel.send(msg)
 
 client.run(config.token)
