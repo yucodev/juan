@@ -51,7 +51,7 @@ async def on_message(message):
         msg = 'English, español, a bit of french, some german... But yeah, you know, I\'m Juan, so mainly Spanglish.'
         await message.channel.send(msg)
 
-    elif message.content.lower() in ['who did you vote', 'who to vote', 'trump or biden']
+    elif message.content.lower() in ['who did you vote', 'who to vote', 'trump or biden']:
         list = ['If I told you I would be removed from the server', 'American Communist Party, cause I just wanted free stuff, like... you know... an iPhone 12 and my daily Starbucks #BLM coffee cup', 'National Socialist Movement, but please, dont tell anyone :)', '#BidenHarris2020... well, actually Kamala, because I don\'t know who will be the VP after Joe passes away', 'I\'m a horse and my name is juan, so #LatinosForTrump obviously, RIGGED ELECTION!!!!!!!!!!!!!!!', 'Green Party, like (weed) my meals...', 'Jo Jorgensen (L), horses dont deserve taxes nor obligations', '*political compass memes intensify*']
         msg = list[random.randint(0, len(list) - 1)].format(message)
         await message.channel.send(msg)
