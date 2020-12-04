@@ -33,7 +33,7 @@ async def on_message(message):
     if message.author.id == client.user.id:
         return
 
-    if str(['hola', 'hi', 'hello']) in message.content.lower() :
+    if {'hola', 'hi', 'hello'} in message.content.lower() :
         msg = 'Hello {0.author.mention} welcome man, cómo andás my friend?'.format(message)
         await message.channel.send(msg)
 
