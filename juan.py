@@ -63,4 +63,9 @@ async def on_message(message):
         msg = list[random.randint(0, len(list) - 1)].format(message)
         await message.channel.send(msg)
 
+    elif message.content.lower() in ['juan']:
+        list = ['https://i1.kym-cdn.com/entries/icons/original/000/012/837/31947478577132381_uISnEynS_f.jpg', 'https://i3.kym-cdn.com/photos/images/original/000/546/384/342.png', 'https://www.thepubliceditor.com/wp-content/uploads/2017/09/Hispanica_Dons_Juan_Meme_05.jpg', 'https://i.ytimg.com/vi/t5hIhRRc1mQ/hqdefault.jpg', 'https://i3.kym-cdn.com/photos/images/newsfeed/000/527/379/2fc.jpg', 's2.quickmeme.com/img/b2/b22e3d52b3480cd345c51b956bbfa3e879b7ba99034561ddcb34a6d9a436369d.jpg', 'https://sayingimages.com/wp-content/uploads/juan-does-not-simply-burrito-meme.png', 'https://pics.onsizzle.com/juan-small-step-for-man-mexican-word-ay-comte-juan-2867786.png', 'https://pics.onsizzle.com/i-hate-tacos-said-no-juan-ever-16074307.png', 'https://www.memecreator.org/static/images/memes/3861823.jpg', 'https://i.imgflip.com/ve0m1.jpg', 'https://i.ytimg.com/vi/SFvuAq2upO4/maxresdefault.jpg', 'www.funnybeing.com/wp-content/uploads/2017/05/May-The-Horse-Be-With-You.jpg', 'https://img.memecdn.com/xbox-juan_o_1541015.jpg', 'http://memecrunch.com/meme/9QYA/juan-hundred-and-juan-dalmatians/image.jpg?w=1024&c=1']
+        msg = list[random.randint(0, len(list) - 1)].format(message)
+        await message.channel.send(msg)
+
 client.run(config.token)
