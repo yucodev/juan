@@ -34,15 +34,15 @@ async def on_message(message):
         return
     #message starts with hi or hello then print these
     # LOOKING FORWARD TO SOLVING CASE SENSITIVE PROBLEM!
-    if message.content.startswith({'hi', 'hello', 'howdy', 'hola'}):
+    if ['hi', 'hello', 'howdy', 'hola'] in message.content.lower()
         msg = 'Hello {0.author.mention} welcome man, cómo andás my friend?'.format(message)
         await message.channel.send(msg)
     #when the message with help then do this
-    elif message.content.startswith(['help', 'i need help']):
+    elif ['help', 'i need help'] in message.content.lower()
         msg = 'Let me check with that level and come back to you, amigo!'.format(message)
         await message.channel.send(msg)
 
-    elif message.content.startswith(['random advice', 'give me a random advice']):
+    elif ['random advice', 'give me a random advice'] in message.content.lower()
         list = ['Eat tacos and be happy!', 'Horses are nice, i love horses and you should too, compadre', 'study more, do some exercise and that stuff']
         msg = list[random.randint(0, len(list) - 1)].format(message)
         await message.channel.send(msg)
