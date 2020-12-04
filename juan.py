@@ -70,4 +70,5 @@ async def on_message(message):
         msg = list[random.randint(0, len(list) - 1)].format(message)
         await message.channel.send(msg)
 
+# the bot's token is saved in a seperate module for security purposes
 client.run(config.token)
