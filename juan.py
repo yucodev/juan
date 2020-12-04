@@ -22,7 +22,7 @@ import math
 client = discord.Client()
 
 @client.event
-#when the bot started running, we may print its name, id etc
+# when the bot started running, we may print its name, id etc
 async def on_ready():
     print('Logged in')
     print("Username: ", end='')
@@ -30,7 +30,7 @@ async def on_ready():
     print("Userid: ", end='')
     print(client.user.id)
 @client.event
-#when the bot gets a message this method gets triggered
+# when the bot gets a message this method gets triggered
 async def on_message(message):
     if message.author.id == client.user.id:
         return
@@ -70,5 +70,5 @@ async def on_message(message):
         msg = list[random.randint(0, len(list) - 1)].format(message)
         await message.channel.send(msg)
 
-# the bot's token is saved in a seperate module for security purposes
+# the bot's token is saved in a seperate module for security reasons. Fool me once, shame on you; fool me twice, shame on me. Va por tí Antonio del CNI roba tokens.
 client.run(config.token)
