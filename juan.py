@@ -30,7 +30,7 @@ async def on_ready():
     print("Userid: ", end='')
     print(client.user.id)
 @client.event
-#when the bot gets the message this method gets triggered
+#when the bot gets a message this method gets triggered
 async def on_message(message):
     if message.author.id == client.user.id:
         return
