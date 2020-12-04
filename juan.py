@@ -6,6 +6,8 @@
 #       JJ            UU          UU          AA            AA        NN        NN  NN
 #      JJ             UU          UU         AA              AA       NN          NNNN
 #  JJJJJ              UUUUUUUUUUUUUU        AA                AA      NN            NN
+#
+# © Copyright YuCode! developers 2020
 
 import os
 import discord
