@@ -92,7 +92,7 @@ async def on_message(message):
         msg = list[random.randint(0, len(list) - 1)]
         await message.channel.send(msg)
 
-    elif message.content.lower() in ['ok?', 'alright?', 'is everything ok?']:
+    elif message.content.lower() in ['ok?', 'ok', 'sure', 'can i?', 'alright?', 'is everything ok?']:
         list = ['ok', 'sure', 'right', 'juanismo']
         msg = list[random.randint(0, len(list) - 1)]
         await message.channel.send(msg)
@@ -108,7 +108,7 @@ async def on_message(message):
         await message.channel.send(msg)
 
     # random percentage
-elif str(message.content).lower() in ['random percentage', 'percentage'] or ('likely' & 'odds') in str(message.content).lower()):
+    elif str(message.content).lower() in ['random percentage', 'percentage', 'odds']: # or ('likely' & 'odds') in str(message.content).lower()):
         msg = (str(round(random.uniform(0, 100), 2)) + '%').format(message)
         await message.channel.send(msg)
         return
