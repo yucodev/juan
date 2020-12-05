@@ -118,7 +118,7 @@ async def on_message(message):
         await message.channel.send(msg)
 
     # yes or no
-    elif message.content.lower() in ['yes or no', 'yes or no?']: # or ('should' in str(message.content).lower()) or (str(message.content).lower().startswith('!yn')):
+    elif str(message.content).lower() in ['yes or no', 'yes or no?'] or ('should' in str(message.content).lower()) or str(message.content).lower().startswith('!yn'):
         list = ['YES', 'NO']
         msg = list[random.randint(0, 1)]
         await message.channel.send(msg)
