@@ -108,7 +108,7 @@ async def on_message(message):
         await message.channel.send(msg)
 
     # random ge
-    elif str(message.content).lower() in ['random percentage', 'percentage'] or ['likely', 'odds'] in str(message.content).lower():
+    elif str(message.content).lower() in ['random percentage', 'percentage'] or str(['likely', 'odds']) in str(message.content).lower():
         msg = str(round(random.uniform(0, 100), 2)) + '%'
         await message.channel.send(msg)
 
