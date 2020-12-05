@@ -76,17 +76,17 @@ async def on_message(message):
         msg = list[random.randint(0, len(list) - 1)].format(message)
         await message.channel.send(msg)
 
-    elif message.content.lower() in ['who did you vote', 'who to vote', 'trump or biden']:
+    elif message.content.lower() in ['who did you vote for', 'who you voted', 'who did you vote', 'who to vote', 'trump or biden']:
         list = [
         'If I told you I would be removed from the server',
         'American Communist Party, cause I just wanted free stuff, like... you know... an iPhone 12 and my daily Starbucks #BLM coffee cup',
         'National Socialist Movement, but please, dont tell my mom :)',
-        '#BidenHarris2020... well, actually Kamala, because I don\'t know who will be the VP after Joe passes away',
-        'I\'m a horse and my name is juan, so #LatinosForTrump obviously, RIGGED ELECTION!!!!!!!!!!!!!!!',
-        'Green Party, like (weed) my meals...',
-        'Jo Jorgensen (L), horses dont deserve taxes nor obligations TAXATION IS THEFT!!',
+        '#BidenHarris2020... because I like kids. I don\'t know who will be the VP after Joe... you know...',
+        'I\'m a horse and my name is juan, so #LatinosForTrump obviously, RIGGED ELECTION!!!!!!! STOP THE COUNT!!!!!',
+        'Green Party, like (weed) my meals... #ClimateActionNow!',
+        'Jo Jorgensen (L), horses dont deserve taxes nor obligations TAXATION IS THEFT!! END THE WAR ON DRUGS!! GUNS FOR EVERYONE!!',
         '*political compass memes intensify*'
-        'Juanist Horse\'s Party'
+        'Juanist Horse\'s Party, the best party, amigo!'
         ]
         msg = list[random.randint(0, len(list) - 1)]
         await message.channel.send(msg)
@@ -106,8 +106,8 @@ async def on_message(message):
         msg = random.randint(0, 100)
         await message.channel.send(msg)
 
-    # random percentage
-    elif message.content.lower() in ['random percentage', 'percentage']:
+    # random ge
+    elif message.content.lower() in ['random percentage', 'percentage'] or ('likely', 'odds') in message.content.lower():
         msg = str(round(random.uniform(0, 100), 2)) + '%'
         await message.channel.send(msg)
 
@@ -117,7 +117,7 @@ async def on_message(message):
         await message.channel.send(msg)
 
     # yes or no
-    elif message.content.lower() in ['yes or no', 'yes or no?']:
+    elif message.content.lower() in ['yes or no', 'yes or no?'] or ('should') in message.content.lower() or message.content.lower().startswith('!yn'):
         list = ['YES', 'NO']
         msg = list[random.randint(0, 1)]
         await message.channel.send(msg)
