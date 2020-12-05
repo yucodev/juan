@@ -29,6 +29,7 @@ async def on_ready():
     print(client.user.name)
     print("Userid: ", end='')
     print(client.user.id)
+
 @client.event
 # when the bot gets a message this method gets triggered
 async def on_message(message):
@@ -117,7 +118,7 @@ async def on_message(message):
         await message.channel.send(msg)
 
     # yes or no
-    elif (message.content.lower() in ['yes or no', 'yes or no?']) == True or (('should') in message.content.lower()) == True or (message.content.lower().startswith('!yn')) == True:
+    elif (str(message.content).lower() in ['yes or no', 'yes or no?']) or ('should' in str(message.content).lower()) or (str(message.content).lower().startswith('!yn')):
         list = ['YES', 'NO']
         msg = list[random.randint(0, 1)]
         await message.channel.send(msg)
