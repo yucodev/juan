@@ -68,22 +68,22 @@ async def on_message(message):
 
     # random integer 1 to 100
     elif message.content.lower() in ['random number', 'random number 10', '1 to 10']:
-        msg = random.randint(0, 10).format(message)
+        msg = random.randint(0, 10)
         await message.channel.send(msg)
 
     # random integer 1 to 100
     elif message.content.lower() in ['random number 100', '1 to 100']:
-        msg = random.randint(0, 100).format(message)
+        msg = random.randint(0, 100)
         await message.channel.send(msg)
 
     # random percentage
     elif message.content.lower() in ['random percentage', 'percentage']:
-        msg = round(random.uniform(0, 100), 2).format(message)
+        msg = round(random.uniform(0, 100), 2)
         await message.channel.send(msg)
 
     # random integer 1 to 1000
     elif message.content.lower() in ['random number 1000', '1 to 1000']:
-        msg = random.randint(0, 1000).format(message)
+        msg = random.randint(0, 1000)
         await message.channel.send(msg)
 
     # sends a random juan gif
