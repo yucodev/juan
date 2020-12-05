@@ -88,12 +88,12 @@ async def on_message(message):
         '*political compass memes intensify*'
         'Juanist Horse\'s Party'
         ]
-        msg = list[random.randint(0, len(list) - 1)].format(message)
+        msg = list[random.randint(0, len(list) - 1)]
         await message.channel.send(msg)
 
     elif message.content.lower() in ['ok?', 'alright?', 'is everything ok?']:
         list = ['ok', 'sure', 'right', 'juanismo']
-        msg = list[random.randint(0, len(list) - 1)].format(message)
+        msg = list[random.randint(0, len(list) - 1)]
         await message.channel.send(msg)
 
     # random integer 1 to 100
@@ -114,6 +114,12 @@ async def on_message(message):
     # random integer 1 to 1000
     elif message.content.lower() in ['random number 1000', '1 to 1000']:
         msg = random.randint(0, 1000)
+        await message.channel.send(msg)
+
+    # yes or no
+    elif message.content.lower() in ['yes or no', 'yes or no?']:
+        list = ['YES', 'NO']
+        msg = list[random.randint(0, 1)]
         await message.channel.send(msg)
 
     # sends a random juan gif
