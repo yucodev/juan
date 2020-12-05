@@ -108,9 +108,9 @@ async def on_message(message):
         await message.channel.send(msg)
 
     # random ge
-    elif message.content.lower() in ['random percentage', 'percentage'] or ('likely', 'odds') in message.content.lower():
-        msg = str(round(random.uniform(0, 100), 2)) + '%'
-        await message.channel.send(msg)
+    # elif message.content.lower() in ['random percentage', 'percentage'] or ('likely', 'odds') in message.content.lower():
+    #     msg = str(round(random.uniform(0, 100), 2)) + '%'
+    #     await message.channel.send(msg)
 
     # random integer 1 to 1000
     elif message.content.lower() in ['random number 1000', '1 to 1000']:
