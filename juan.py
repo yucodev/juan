@@ -156,7 +156,7 @@ async def on_message(message):
         msg = list[random.randint(0, len(list) - 1)].format(message)
         await message.channel.send(msg)
 
-    elif message.content.lower().startswith(['how are you', 'are you ok']):
+    elif message.content.lower().startswith(str(['how are you', 'are you ok'])):
         list = ['https://finofilipino.org/wp-content/uploads/2020/07/CPmkeAcWwAAo-eF.jpg']
         msg = list[random.randint(0, len(list) - 1)].format(message)
         await message.channel.send(msg)
