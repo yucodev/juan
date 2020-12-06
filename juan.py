@@ -123,7 +123,7 @@ async def on_message(message):
         msg = random.choice(answers).format(message)
         await message.channel.send(msg)
 
-    elif ('QAnon', 'pizzagate') in message.content.lower():
+    elif ('QAnon') in message.content.lower():
         answers = ['Horses don\'t have conspiracy theories, so idk what to say, man']
         msg = random.choice(answers).format(message)
         await message.channel.send(msg)
