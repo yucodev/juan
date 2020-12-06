@@ -158,9 +158,9 @@ async def on_message(message):
 
     elif message.content.lower().startswith(('how are you', 'are you ok')):
         answers = [
-        'Doing great!'
-        'Just fine'
-        'Feeling awesome!'
+        'Doing great!',
+        'Just fine',
+        'Feeling awesome!',
         ]
         # msg = answers[random.randint(0, len(answers) - 1)].format(message)
         msg = random.choice(answers).format(message)
