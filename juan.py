@@ -88,6 +88,7 @@ async def on_message(message):
         'Jo Jorgensen (L), horses dont deserve taxes nor obligations TAXATION IS THEFT!! END THE WAR ON DRUGS!! GUNS FOR EVERYONE!!',
         '*political compass memes intensify*'
         'Juanist Horse\'s Party, the best party, amigo!'
+        'Falange Española Caballista de las Juntas de Ofensiva Nacional-Juanistas'
         ]
         msg = list[random.randint(0, len(list) - 1)]
         await message.channel.send(msg)
@@ -142,6 +143,21 @@ async def on_message(message):
         'https://img.memecdn.com/xbox-juan_o_1541015.jpg',
         'http://memecrunch.com/meme/9QYA/juan-hundred-and-juan-dalmatians/image.jpg?w=1024&c=1'
         ]
+        msg = list[random.randint(0, len(list) - 1)].format(message)
+        await message.channel.send(msg)
+
+    elif message.content.lower() in ['viva españa', 'viva espana']:
+        list = ['No results found for "Viva España". Did you mean ":flag_es: ARRIBA ESPAÑA :flag_es:" ?']
+        msg = list[random.randint(0, len(list) - 1)].format(message)
+        await message.channel.send(msg)
+
+    elif message.content.lower() in ['arriba españa', 'arriba espana', 'una, grande y libre', 'una grande libre', 'una grande y libre', 'dios patria rey']:
+        list = ['https://finofilipino.org/wp-content/uploads/2020/07/CPmkeAcWwAAo-eF.jpg']
+        msg = list[random.randint(0, len(list) - 1)].format(message)
+        await message.channel.send(msg)
+
+    elif message.content.lower().startswith(['how are you', 'are you ok']):
+        list = ['https://finofilipino.org/wp-content/uploads/2020/07/CPmkeAcWwAAo-eF.jpg']
         msg = list[random.randint(0, len(list) - 1)].format(message)
         await message.channel.send(msg)
 
