@@ -81,7 +81,7 @@ async def on_message(message):
         'tampoco hace falta insultar eh',
         'hey I\'m a horse, be patient',
         'I guess if you were a horse, you coudn\'t be as smart as I am',
-        'God sent me!'
+        'God sent me!',
         '#RESPECT bruh'
         ]
         msg = random.choice(answers).format(message)
@@ -96,8 +96,8 @@ async def on_message(message):
         'I\'m a horse and my name is juan, so #LatinosForTrump obviously, RIGGED ELECTION!!!!!!! STOP THE COUNT!!!!!',
         'Green Party, like (weed) my meals... #ClimateActionNow!',
         'Jo Jorgensen (L), horses dont deserve taxes nor obligations TAXATION IS THEFT!! END THE WAR ON DRUGS!! GUNS FOR EVERYONE!!',
-        '*political compass memes intensify*'
-        'Juanist Horse\'s Party, the best party, amigo!'
+        '*political compass memes intensify*',
+        'Juanist Horse\'s Party, the best party, amigo!',
         'Falange Española Cabalanswersa de las Juntas de Ofensiva Nacional-Juanistas'
         ]
         msg = random.choice(answers).format(message)
@@ -121,9 +121,9 @@ async def on_message(message):
         answers = [
         'My name is Juan Benito and I\'m a horse',
         'Mi nombre es Juan Benito y soy un caballo',
-        'Sometimes I can be a bit annoying, I know, but I\'m Juan, you know...'
-        'A veces puedo ser un poco pesado, lo sé, pero soy Juan'
-        'I won\'t tell you haha'
+        'Sometimes I can be a bit annoying, I know, but I\'m Juan, you know...',
+        'A veces puedo ser un poco pesado, lo sé, pero soy Juan',
+        'I won\'t tell you haha',
         'I don\'t know who created me, am I someone?'
         ]
         msg = random.choice(answers).format(message)
