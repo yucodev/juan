@@ -72,12 +72,12 @@ async def on_message(message):
         msg = random.choice(answers).format(message)
         await message.channel.send(msg)
 
-    elif str(('language', 'speak', 'idioma')) in message.content.lower():
+    elif (('language', 'speak', 'idioma')) in message.content.lower():
         answers = ['English, español, a bit of french, some german... But yeah, you know, I\'m Juan, so mainly Spanglish.']
         msg = random.choice(answers).format(message)
         await message.channel.send(msg)
 
-    elif str(('nadie te preguntó', 'who asked you', 'shut up', 'pesado')) in message.content.lower():
+    elif (('nadie te preguntó', 'who asked you', 'shut up', 'pesado')) in message.content.lower():
         answers = [
         'tampoco hace falta insultar eh',
         'hey I\'m a horse, be patient',
@@ -88,7 +88,7 @@ async def on_message(message):
         msg = random.choice(answers).format(message)
         await message.channel.send(msg)
 
-    elif str(('vote', 'trump or biden', 'biden or trump')) in message.content.lower():
+    elif (('vote', 'trump or biden', 'biden or trump')) in message.content.lower():
         answers = [
         'If I told you I would be removed from the server',
         'American Communist Party, cause I just wanted free stuff, like... you know... an iPhone 12 and my daily Starbucks #BLM coffee cup',
@@ -104,12 +104,12 @@ async def on_message(message):
         msg = random.choice(answers).format(message)
         await message.channel.send(msg)
 
-    elif str(('ok', 'sure', 'alright')) in message.content.lower():
+    elif (('ok', 'sure', 'alright')) in message.content.lower():
         answers = ['ok', 'sure', 'right', 'juanismo']
         msg = random.choice(answers).format(message)
         await message.channel.send(msg)
 
-    elif str(('not bad', 'better than expected')) in message.content.lower():
+    elif (('not bad', 'better than expected')) in message.content.lower():
         answers = [
         'not bad at all buddy',
         'I told you!', 'I\'m the best my friend!',
@@ -118,17 +118,17 @@ async def on_message(message):
         msg = random.choice(answers).format(message)
         await message.channel.send(msg)
 
-    elif str(('LGBT')) in message.content.lower():
+    elif (('LGBT')) in message.content.lower():
         answers = ['Sorry, I only know about the Large Goats Beating Trees Association, next to my field. They\'re nice goats']
         msg = random.choice(answers).format(message)
         await message.channel.send(msg)
 
-    elif str(('QAnon')) in message.content.lower():
+    elif (('QAnon')) in message.content.lower():
         answers = ['Horses don\'t have conspiracy theories, so idk what to say, man']
         msg = random.choice(answers).format(message)
         await message.channel.send(msg)
 
-    elif str(('who are you', 'your name')) in message.content.lower():
+    elif (('who are you', 'your name')) in message.content.lower():
         answers = [
         'My name is Juan Benito and I\'m a horse',
         'Mi nombre es Juan Benito y soy un caballo',
@@ -151,7 +151,7 @@ async def on_message(message):
         await message.channel.send(msg)
 
     # random percentage
-    elif str(('random percentage', 'percentage', 'odds', 'likely')) in message.content.lower():  # or ('likely' & 'odds') in str(message.content).lower()):
+    elif (('random percentage', 'percentage', 'odds', 'likely')) in message.content.lower():  # or ('likely' & 'odds') in str(message.content).lower()):
         msg = (str(round(random.uniform(0, 100), 2)) + '%').format(message)
         await message.channel.send(msg)
 
