@@ -24,5 +24,3 @@ juanismo
 
 
 
-
-viva espana
