@@ -18,6 +18,7 @@ JJJJJJJJJJJJJ       UU          UU               AAAAAA             NN          
 
 juanismo
 
+imagine not being an "ARRIBA ESPAÑA" simp all day...
 
 
 
