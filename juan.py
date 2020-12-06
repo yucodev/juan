@@ -14,13 +14,6 @@ import discord
 import config
 import random
 import math
-# from dotenv import load_dotenv
-
-# load_dotenv()
-# TOKEN = os.getenv(config.token)
-
-def wim(a):
-    return (a in message.content.lower())
 
 client = discord.Client()
 
@@ -36,6 +29,9 @@ async def on_ready():
 @client.event
 # when the bot gets a message this method gets triggered
 async def on_message(message):
+    def wim(a):
+        return (a in message.content.lower())
+
     if message.author.id == client.user.id:
         return
 
@@ -74,7 +70,7 @@ async def on_message(message):
         ]
         msg = random.choice(answers).format(message)
         await message.channel.send(msg)
-    # 
+    #
     # elif ('language', 'speak', 'idioma') in message.content.lower():
     #     answers = ['English, español, a bit of french, some german... But yeah, you know, I\'m Juan, so mainly Spanglish.']
     #     msg = random.choice(answers).format(message)
