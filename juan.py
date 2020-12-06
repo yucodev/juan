@@ -36,7 +36,7 @@ async def on_message(message):
     if message.author.id == client.user.id:
         return
 
-    if str(('hi', 'hola', 'hello')) in message.content.lower():
+    if (('hi', 'hola', 'hello')) in message.content.lower():
         answers = [
         'Hello {0.author.mention} welcome man, cómo andás my friend?',
         'Hola, {0.author.mention}, how you doing!',
