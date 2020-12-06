@@ -70,89 +70,79 @@ async def on_message(message):
         ]
         msg = random.choice(answers).format(message)
         await message.channel.send(msg)
-    #
-    # elif ('language', 'speak', 'idioma') in message.content.lower():
-    #     answers = ['English, español, a bit of french, some german... But yeah, you know, I\'m Juan, so mainly Spanglish.']
-    #     msg = random.choice(answers).format(message)
-    #     await message.channel.send(msg)
-    #
-    # elif ('nadie te preguntó', 'who asked you', 'shut up', 'pesado') in message.content.lower():
-    #     answers = [
-    #     'tampoco hace falta insultar eh',
-    #     'hey I\'m a horse, be patient',
-    #     'I guess if you were a horse, you coudn\'t be as smart as I am',
-    #     'God sent me!'
-    #     '#RESPECT bruh'
-    #     ]
-    #     msg = random.choice(answers).format(message)
-    #     await message.channel.send(msg)
-    #
-    # elif ('vote', 'trump or biden', 'biden or trump') in message.content.lower():
-    #     answers = [
-    #     'If I told you I would be removed from the server',
-    #     'American Communist Party, cause I just wanted free stuff, like... you know... an iPhone 12 and my daily Starbucks #BLM coffee cup',
-    #     'National Sociaanswers Movement, but please, dont tell my mom :)',
-    #     '#BidenHarris2020... because I like kids. I don\'t know who will be the VP after Joe... you know...',
-    #     'I\'m a horse and my name is juan, so #LatinosForTrump obviously, RIGGED ELECTION!!!!!!! STOP THE COUNT!!!!!',
-    #     'Green Party, like (weed) my meals... #ClimateActionNow!',
-    #     'Jo Jorgensen (L), horses dont deserve taxes nor obligations TAXATION IS THEFT!! END THE WAR ON DRUGS!! GUNS FOR EVERYONE!!',
-    #     '*political compass memes intensify*'
-    #     'Juanist Horse\'s Party, the best party, amigo!'
-    #     'Falange Española Cabalanswersa de las Juntas de Ofensiva Nacional-Juanistas'
-    #     ]
-    #     msg = random.choice(answers).format(message)
-    #     await message.channel.send(msg)
+
+    elif wim('language') or wim('idioma') or wim('speak'):
+        answers = ['English, español, a bit of french, some german... But yeah, you know, I\'m Juan, so mainly Spanglish.']
+        msg = random.choice(answers).format(message)
+        await message.channel.send(msg)
+
+    elif wim('nadie te preguntó') or wim('who asked you') or wim('shut up') or wim('pesado'):
+        answers = [
+        'tampoco hace falta insultar eh',
+        'hey I\'m a horse, be patient',
+        'I guess if you were a horse, you coudn\'t be as smart as I am',
+        'God sent me!'
+        '#RESPECT bruh'
+        ]
+        msg = random.choice(answers).format(message)
+        await message.channel.send(msg)
+
+    elif wim('vote') or wim('trump or biden') or wim('biden or trump'):
+        answers = [
+        'If I told you I would be removed from the server',
+        'American Communist Party, cause I just wanted free stuff, like... you know... an iPhone 12 and my daily Starbucks #BLM coffee cup',
+        'National Sociaanswers Movement, but please, dont tell my mom :)',
+        '#BidenHarris2020... because I like kids. I don\'t know who will be the VP after Joe... you know...',
+        'I\'m a horse and my name is juan, so #LatinosForTrump obviously, RIGGED ELECTION!!!!!!! STOP THE COUNT!!!!!',
+        'Green Party, like (weed) my meals... #ClimateActionNow!',
+        'Jo Jorgensen (L), horses dont deserve taxes nor obligations TAXATION IS THEFT!! END THE WAR ON DRUGS!! GUNS FOR EVERYONE!!',
+        '*political compass memes intensify*'
+        'Juanist Horse\'s Party, the best party, amigo!'
+        'Falange Española Cabalanswersa de las Juntas de Ofensiva Nacional-Juanistas'
+        ]
+        msg = random.choice(answers).format(message)
+        await message.channel.send(msg)
 
     elif wim('ok') or wim('alright') or wim('sure'):
         answers = ['ok', 'sure', 'right', 'juanismo']
         msg = random.choice(answers).format(message)
         await message.channel.send(msg)
 
-    # elif ('not bad') in message.content.lower() or ('better than expected') in message.content.lower():
-    #     answers = [
-    #     'not bad at all buddy',
-    #     'I told you!', 'I\'m the best my friend!',
-    #     'Soy un caballo qué esperabas compadre?'
-    #     ]
-    #     msg = random.choice(answers).format(message)
-    #     await message.channel.send(msg)
-    #
-    # elif ('LGBT') in message.content.lower():
-    #     answers = ['Sorry, I only know about the Large Goats Beating Trees Association, next to my field. They\'re nice goats']
-    #     msg = random.choice(answers).format(message)
-    #     await message.channel.send(msg)
-    #
-    # elif ('QAnon') in message.content.lower():
-    #     answers = ['Horses don\'t have conspiracy theories, so idk what to say, man']
-    #     msg = random.choice(answers).format(message)
-    #     await message.channel.send(msg)
-    #
-    # elif ('who are you', 'your name') in message.content.lower():
-    #     answers = [
-    #     'My name is Juan Benito and I\'m a horse',
-    #     'Mi nombre es Juan Benito y soy un caballo',
-    #     'Sometimes I can be a bit annoying, I know, but I\'m Juan, you know...'
-    #     'A veces puedo ser un poco pesado, lo sé, pero soy Juan'
-    #     'I won\'t tell you haha'
-    #     'I don\'t know who created me, am I someone?'
-    #     ]
-    #     msg = random.choice(answers).format(message)
-    #     await message.channel.send(msg)
-    #
-    # # random integer 1 to 100
-    # elif message.content.lower() in ['random number', 'random number 10', '1 to 10']:
-    #     msg = random.randint(0, 10)
-    #     await message.channel.send(msg)
-    #
-    # # random integer 1 to 100
-    # elif message.content.lower() in ['random number 100', '1 to 100']:
-    #     msg = random.randint(0, 100)
-    #     await message.channel.send(msg)
-    #
-    # # random percentage
-    # elif ('random percentage', 'percentage', 'odds', 'likely') in message.content.lower():  # or ('likely' & 'odds') in str(message.content).lower()):
-    #     msg = (str(round(random.uniform(0, 100), 2)) + '%').format(message)
-    #     await message.channel.send(msg)
+    elif wim('not bad') or wim('better than expected'):
+        answers = [
+        'not bad at all buddy',
+        'I told you!', 'I\'m the best my friend!',
+        'Soy un caballo qué esperabas compadre?'
+        ]
+        msg = random.choice(answers).format(message)
+        await message.channel.send(msg)
+
+    elif wim('who are you') or wim('your name'):
+        answers = [
+        'My name is Juan Benito and I\'m a horse',
+        'Mi nombre es Juan Benito y soy un caballo',
+        'Sometimes I can be a bit annoying, I know, but I\'m Juan, you know...'
+        'A veces puedo ser un poco pesado, lo sé, pero soy Juan'
+        'I won\'t tell you haha'
+        'I don\'t know who created me, am I someone?'
+        ]
+        msg = random.choice(answers).format(message)
+        await message.channel.send(msg)
+
+    # random integer 1 to 100
+    elif message.content.lower() in ['random number', 'random number 10', '1 to 10']:
+        msg = random.randint(0, 10)
+        await message.channel.send(msg)
+
+    # random integer 1 to 100
+    elif message.content.lower() in ['random number 100', '1 to 100']:
+        msg = random.randint(0, 100)
+        await message.channel.send(msg)
+
+    # random percentage
+    elif wim('random percentage') or wim('percentage') or wim('odds') or wim('likely'):  # or ('likely' & 'odds') in str(message.content).lower()):
+        msg = (str(round(random.uniform(0, 100), 2)) + '%').format(message)
+        await message.channel.send(msg)
 
     # random integer 1 to 1000
     elif message.content.lower() in ['random number 1000', '1 to 1000']:
