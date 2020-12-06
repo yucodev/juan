@@ -42,7 +42,7 @@ async def on_message(message):
         'Hola, {0.author.mention}, how you doing!',
         'Nice to meet you {0.author.mention}'
         ]
-        msg = answers[random.randint(0, len(answers) - 1)].format(message)
+        msg = random.choice(answers).format(message)
         await message.channel.send(msg)
 
     elif message.content.lower() in ['help', 'ayuda']:
@@ -52,7 +52,7 @@ async def on_message(message):
         'well, i\'m a horse, not sure if i can do more than a human',
         'callate hay gente en africa mucho peor que tu, seguro que tu problema no es tan importante'
         ]
-        msg = answers[random.randint(0, len(answers) - 1)].format(message)
+        msg = random.choice(answers).format(message)
         await message.channel.send(msg)
 
     # sends a random advice
@@ -69,15 +69,26 @@ async def on_message(message):
         'no te comas esa burguer',
         'you should always unplug the roaster, trust me'
         ]
-        msg = answers[random.randint(0, len(answers) - 1)].format(message)
+        msg = random.choice(answers).format(message)
         await message.channel.send(msg)
 
-    elif message.content.lower() in ['what language do you speak', 'what languages do you speak', 'que idioma hablas', 'que idiomas hablas']:
+    elif ('language', 'speak', 'idioma') in message.content.lower():
         answers = ['English, español, a bit of french, some german... But yeah, you know, I\'m Juan, so mainly Spanglish.']
-        msg = answers[random.randint(0, len(answers) - 1)].format(message)
+        msg = random.choice(answers).format(message)
         await message.channel.send(msg)
 
-    elif message.content.lower() in ['who did you vote for', 'who you voted', 'who did you vote', 'who to vote', 'trump or biden']:
+    elif ('nadie te preguntó', 'who asked you', 'shut up', 'pesado') in message.content.lower():
+        answers = [
+        'tampoco hace falta insultar eh',
+        'hey I\'m a horse, be patient',
+        'I guess if you were a horse, you coudn\'t be as smart as I am',
+        'God sent me!'
+        '#RESPECT bruh'
+        ]
+        msg = random.choice(answers).format(message)
+        await message.channel.send(msg)
+
+    elif ('vote', 'trump or biden', 'biden or trump') in message.content.lower():
         answers = [
         'If I told you I would be removed from the server',
         'American Communist Party, cause I just wanted free stuff, like... you know... an iPhone 12 and my daily Starbucks #BLM coffee cup',
@@ -90,14 +101,45 @@ async def on_message(message):
         'Juanist Horse\'s Party, the best party, amigo!'
         'Falange Española Cabalanswersa de las Juntas de Ofensiva Nacional-Juanistas'
         ]
-        msg = answers[random.randint(0, len(answers) - 1)]
+        msg = random.choice(answers).format(message)
         await message.channel.send(msg)
 
-    elif message.content.lower() in ['ok?', 'ok', 'sure', 'can i?', 'alright?', 'is everything ok?']:
+    elif ('ok', 'sure', 'alright') in message.content.lower():
         answers = ['ok', 'sure', 'right', 'juanismo']
-        msg = answers[random.randint(0, len(answers) - 1)]
+        msg = random.choice(answers).format(message)
         await message.channel.send(msg)
 
+    elif ('not bad', 'better than expected') in message.content.lower():
+        answers = [
+        'not bad at all buddy',
+        'I told you!', 'I\'m the best my friend!',
+        'Soy un caballo qué esperabas compadre?'
+        ]
+        msg = random.choice(answers).format(message)
+        await message.channel.send(msg)
+
+    elif ('LGBT') in message.content.lower():
+        answers = ['Sorry, I only know about the Large Goats Beating Trees Association, next to my field. They\'re nice goats']
+        msg = random.choice(answers).format(message)
+        await message.channel.send(msg)
+
+    elif ('QAnon') in message.content.lower():
+        answers = ['Horses don\'t have conspiracy theories, so idk what to say, man']
+        msg = random.choice(answers).format(message)
+        await message.channel.send(msg)
+
+    elif ('who are you', 'your name') in message.content.lower():
+        answers = [
+        'My name is Juan Benito and I\'m a horse',
+        'Mi nombre es Juan Benito y soy un caballo',
+        'Sometimes I can be a bit annoying, I know, but I\'m Juan, you know...'
+        'A veces puedo ser un poco pesado, lo sé, pero soy Juan'
+        'I won\'t tell you haha'
+        'I don\'t know who created me, am I someone?'
+        ]
+        msg = random.choice(answers).format(message)
+        await message.channel.send(msg)
+        
     # random integer 1 to 100
     elif message.content.lower() in ['random number', 'random number 10', '1 to 10']:
         msg = random.randint(0, 10)
@@ -109,10 +151,9 @@ async def on_message(message):
         await message.channel.send(msg)
 
     # random percentage
-    elif str(message.content).lower() in ['random percentage', 'percentage', 'odds']: # or ('likely' & 'odds') in str(message.content).lower()):
+    elif ('random percentage', 'percentage', 'odds', 'likely') in message.content.lower():  # or ('likely' & 'odds') in str(message.content).lower()):
         msg = (str(round(random.uniform(0, 100), 2)) + '%').format(message)
         await message.channel.send(msg)
-        return
 
     # random integer 1 to 1000
     elif message.content.lower() in ['random number 1000', '1 to 1000']:
@@ -120,7 +161,7 @@ async def on_message(message):
         await message.channel.send(msg)
 
     # yes or no
-    elif str(message.content).lower() in ['yes or no', 'yes or no?'] or ('should' in str(message.content).lower()) or str(message.content).lower().startswith('!yn'):
+    elif message.content.lower().startswith('yes or no') or ('should' in str(message.content).lower()) or str(message.content).lower().startswith('!yn'):
         answers = ['YES', 'NO']
         msg = answers[random.randint(0, 1)]
         await message.channel.send(msg)
@@ -143,17 +184,17 @@ async def on_message(message):
         'https://img.memecdn.com/xbox-juan_o_1541015.jpg',
         'http://memecrunch.com/meme/9QYA/juan-hundred-and-juan-dalmatians/image.jpg?w=1024&c=1'
         ]
-        msg = answers[random.randint(0, len(answers) - 1)].format(message)
+        msg = random.choice(answers).format(message)
         await message.channel.send(msg)
 
     elif message.content.lower() in ['viva españa', 'viva espana']:
         answers = ['No results found for "Viva España". Did you mean ":flag_es: ARRIBA ESPAÑA :flag_es:" ?']
-        msg = answers[random.randint(0, len(answers) - 1)].format(message)
+        msg = random.choice(answers).format(message)
         await message.channel.send(msg)
 
     elif message.content.lower() in ['arriba españa', 'arriba espana', 'una, grande y libre', 'una grande libre', 'una grande y libre', 'dios patria rey']:
         answers = ['https://finofilipino.org/wp-content/uploads/2020/07/CPmkeAcWwAAo-eF.jpg']
-        msg = answers[random.randint(0, len(answers) - 1)].format(message)
+        msg = random.choice(answers).format(message)
         await message.channel.send(msg)
 
     elif message.content.lower().startswith(('how are you', 'are you ok')):
@@ -161,8 +202,8 @@ async def on_message(message):
         'Doing great!',
         'Just fine',
         'Feeling awesome!',
+        'Mejor que nunca compadre!'
         ]
-        # msg = answers[random.randint(0, len(answers) - 1)].format(message)
         msg = random.choice(answers).format(message)
         await message.channel.send(msg)
 
