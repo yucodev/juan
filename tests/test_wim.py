@@ -1,8 +1,9 @@
 def wim(*words):
         for word in words:
-            preout = str(word) + " in message.content.lower()-"
-            nexed = preout.replace("-", " or ")
-            x = " ".join(line.strip() for line in nexed
+            preout = str(word) + " in message.content.lower() or "
+            # nexed = preout.replace("-", " or ")
+            # x = "\n".join(line.strip() for line in nexed)
+            x = "\n".join(preout)
             print(x)
 
 wim('hello', 'how are you', 'hola')
