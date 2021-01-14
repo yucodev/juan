@@ -4,6 +4,6 @@ def wim(*words):
         preout = str(word) + " in message.content.lower()"
         a.append(preout)
     output = " or ".join(a)
-    print(output)
+    return output
 
-wim('hello', 'how are you', 'hola')
+print('if ' + wim('hello', 'how are you', 'hola') + ':')

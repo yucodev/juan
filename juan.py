@@ -17,6 +17,14 @@ import math
 
 client = discord.Client()
 
+def wim(*words):
+    a = []
+    for word in words:
+        preout = str(word) + " in message.content.lower()"
+        a.append(preout)
+    output = " or ".join(a)
+    return output
+
 @client.event
 # when the bot started running, we may print its name, id etc
 async def on_ready():
@@ -29,13 +37,11 @@ async def on_ready():
 @client.event
 # when the bot gets a message this method gets triggered
 async def on_message(message):
-    def wim(a):
-        return (a in message.content.lower())
 
     if message.author.id == client.user.id:
         return
 
-    if message.content.lower() in ['hi', 'hola', 'hello'] :
+    if wim('hi', 'hola', 'hello'):
         answers = [
         'Hello {0.author.mention} welcome man, cómo andás my friend?',
         'Hola, {0.author.mention}, how you doing!',
@@ -44,7 +50,7 @@ async def on_message(message):
         msg = random.choice(answers).format(message)
         await message.channel.send(msg)
 
-    elif message.content.lower() in ['help', 'ayuda']:
+    elif wim('help', 'ayuda'):
         answers = [
         'Let me check with that level and come back to you, amigo!',
         'how can i help you, my friend?',
@@ -55,7 +61,7 @@ async def on_message(message):
         await message.channel.send(msg)
 
     # sends a random advice
-    elif message.content.lower() in ['random advice', 'tell me something', 'what should i do', 'dime algo', 'un consejo', 'cuentame algo', 'no se que hacer', 'i don\'t know what to do']:
+    elif wim('random advice', 'tell me something', 'what should i do', 'dime algo', 'un consejo', 'cuentame algo', 'no se que hacer', 'i don\'t know what to do'):
         answers = [
         'Eat tacos and be happy!',
         'Horses are nice, i love horses and you should too, compadre',
@@ -71,12 +77,12 @@ async def on_message(message):
         msg = random.choice(answers).format(message)
         await message.channel.send(msg)
 
-    elif wim('language') or wim('idioma') or wim('speak'):
+    elif wim('language', 'idioma', 'speak'):
         answers = ['English, español, a bit of french, some german... But yeah, you know, I\'m Juan, so mainly Spanglish.']
         msg = random.choice(answers).format(message)
         await message.channel.send(msg)
 
-    elif wim('nadie te preguntó') or wim('who asked you') or wim('shut up') or wim('pesado'):
+    elif wim('nadie te preguntó', 'who asked you', 'shut up', 'pesado'):
         answers = [
         'tampoco hace falta insultar eh',
         'hey I\'m a horse, be patient',
@@ -87,28 +93,12 @@ async def on_message(message):
         msg = random.choice(answers).format(message)
         await message.channel.send(msg)
 
-    elif wim('vote') or wim('trump or biden') or wim('biden or trump'):
-        answers = [
-        'If I told you I would be removed from the server',
-        'American Communist Party, cause I just wanted free stuff, like... you know... an iPhone 12 and my daily Starbucks #BLM coffee cup',
-        'National Sociaanswers Movement, but please, dont tell my mom :)',
-        '#BidenHarris2020... because I like kids. I don\'t know who will be the VP after Joe... you know...',
-        'I\'m a horse and my name is juan, so #LatinosForTrump obviously, RIGGED ELECTION!!!!!!! STOP THE COUNT!!!!!',
-        'Green Party, like (weed) my meals... #ClimateActionNow!',
-        'Jo Jorgensen (L), horses dont deserve taxes nor obligations TAXATION IS THEFT!! END THE WAR ON DRUGS!! GUNS FOR EVERYONE!!',
-        '*political compass memes intensify*',
-        'Juanist Horse\'s Party, the best party, amigo!',
-        'Falange Española Cabalanswersa de las Juntas de Ofensiva Nacional-Juanistas'
-        ]
-        msg = random.choice(answers).format(message)
-        await message.channel.send(msg)
-
-    elif wim('ok') or wim('alright') or wim('sure'):
+    elif wim('ok', 'alright', 'sure'):
         answers = ['ok', 'sure', 'right', 'juanismo']
         msg = random.choice(answers).format(message)
         await message.channel.send(msg)
 
-    elif wim('not bad') or wim('better than expected'):
+    elif wim('not bad', 'better than expected'):
         answers = [
         'not bad at all buddy',
         'I told you!', 'I\'m the best my friend!',
@@ -117,7 +107,7 @@ async def on_message(message):
         msg = random.choice(answers).format(message)
         await message.channel.send(msg)
 
-    elif wim('who are you') or wim('your name'):
+    elif wim('who are you', 'your name'):
         answers = [
         'My name is Juan Benito and I\'m a horse',
         'Mi nombre es Juan Benito y soy un caballo',
@@ -129,34 +119,39 @@ async def on_message(message):
         msg = random.choice(answers).format(message)
         await message.channel.send(msg)
 
+    # random integer between two custom numbers
+    elif message.content.startswith('random number', a, b):
+        msg = random.randint(a, b)
+        await message.channel.send(msg)
+
     # random integer 1 to 100
-    elif message.content.lower() in ['random number', 'random number 10', '1 to 10']:
+    elif wim('random number 10', '1 to 10'):
         msg = random.randint(0, 10)
         await message.channel.send(msg)
 
     # random integer 1 to 100
-    elif message.content.lower() in ['random number 100', '1 to 100']:
+    elif wim('random number 100', '1 to 100'):
         msg = random.randint(0, 100)
         await message.channel.send(msg)
 
     # random percentage
-    elif wim('random percentage') or wim('percentage') or wim('odds') or wim('likely'):  # or ('likely' & 'odds') in str(message.content).lower()):
+    elif wim('random percentage', 'percentage', 'odds', 'likely'):
         msg = (str(round(random.uniform(0, 100), 2)) + '%').format(message)
         await message.channel.send(msg)
 
     # random integer 1 to 1000
-    elif message.content.lower() in ['random number 1000', '1 to 1000']:
+    elif wim('random number 1000', '1 to 1000'):
         msg = random.randint(0, 1000)
         await message.channel.send(msg)
 
     # yes or no
-    elif message.content.lower().startswith('yes or no') or ('should' in str(message.content).lower()) or str(message.content).lower().startswith('!yn'):
+    elif wim('!yn', 'yes or no', 'should'):
         answers = ['YES', 'NO']
         msg = answers[random.randint(0, 1)]
         await message.channel.send(msg)
 
     # sends a random juan gif
-    elif message.content.lower() in ['juan']:
+    elif wim('juan'):
         answers = [
         'https://i1.kym-cdn.com/entries/icons/original/000/012/837/31947478577132381_uISnEynS_f.jpg',
         'https://i3.kym-cdn.com/photos/images/original/000/546/384/342.png',
@@ -168,7 +163,8 @@ async def on_message(message):
         'https://pics.onsizzle.com/juan-small-step-for-man-mexican-word-ay-comte-juan-2867786.png',
         'https://pics.onsizzle.com/i-hate-tacos-said-no-juan-ever-16074307.png',
         'https://www.memecreator.org/static/images/memes/3861823.jpg',
-        'https://i.imgflip.com/ve0m1.jpg', 'https://i.ytimg.com/vi/SFvuAq2upO4/maxresdefault.jpg',
+        'https://i.imgflip.com/ve0m1.jpg',
+        'https://i.ytimg.com/vi/SFvuAq2upO4/maxresdefault.jpg',
         'https://www.funnybeing.com/wp-content/uploads/2017/05/May-The-Horse-Be-With-You.jpg',
         'https://img.memecdn.com/xbox-juan_o_1541015.jpg',
         'http://memecrunch.com/meme/9QYA/juan-hundred-and-juan-dalmatians/image.jpg?w=1024&c=1'
@@ -176,12 +172,12 @@ async def on_message(message):
         msg = random.choice(answers).format(message)
         await message.channel.send(msg)
 
-    elif message.content.lower() in ['viva españa', 'viva espana']:
+    elif wim('viva españa', 'viva espana'):
         answers = ['No results found for "Viva España". Did you mean ":flag_es: ARRIBA ESPAÑA :flag_es:" ?']
         msg = random.choice(answers).format(message)
         await message.channel.send(msg)
 
-    elif message.content.lower() in ['arriba españa', 'arriba espana', 'una, grande y libre', 'una grande libre', 'una grande y libre', 'dios patria rey']:
+    elif wim('arriba españa', 'arriba espana', 'una, grande y libre', 'una grande libre', 'una grande y libre', 'dios patria rey'):
         answers = ['https://finofilipino.org/wp-content/uploads/2020/07/CPmkeAcWwAAo-eF.jpg']
         msg = random.choice(answers).format(message)
         await message.channel.send(msg)
