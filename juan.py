@@ -17,14 +17,6 @@ import math
 
 client = discord.Client()
 
-def wim(*words):
-    a = []
-    for word in words:
-        preout = str(word) + " in message.content.lower()"
-        a.append(preout)
-    output = " or ".join(a)
-    return output
-
 @client.event
 # when the bot started running, we may print its name, id etc
 async def on_ready():
@@ -38,10 +30,13 @@ async def on_ready():
 # when the bot gets a message this method gets triggered
 async def on_message(message):
 
+    def wim(*words):
+        return any(x in message.content.lower() for x in [*words])
+
     if message.author.id == client.user.id:
         return
 
-    if wim('hi', 'hola', 'hello'):
+    if message.content.startswith('hi', 'hola', 'hello'):
         answers = [
         'Hello {0.author.mention} welcome man, cómo andás my friend?',
         'Hola, {0.author.mention}, how you doing!',
@@ -119,10 +114,10 @@ async def on_message(message):
         msg = random.choice(answers).format(message)
         await message.channel.send(msg)
 
-    # random integer between two custom numbers
-    elif message.content.startswith('random number', a, b):
-        msg = random.randint(a, b)
-        await message.channel.send(msg)
+    ######## random integer between two custom numbers (under development)
+    # elif message.content.startswith('random number', a, b):
+    #     msg = random.randint(a, b)
+    #     await message.channel.send(msg)
 
     # random integer 1 to 100
     elif wim('random number 10', '1 to 10'):
@@ -147,7 +142,7 @@ async def on_message(message):
     # yes or no
     elif wim('!yn', 'yes or no', 'should'):
         answers = ['YES', 'NO']
-        msg = answers[random.randint(0, 1)]
+        msg = random.choice(answers)
         await message.channel.send(msg)
 
     # sends a random juan gif
